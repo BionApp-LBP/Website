@@ -1,0 +1,9 @@
+export { default as HeroParallax } from './HeroParallax';
+export { default as HorizontalCards } from './HorizontalCards';
+export { default as BentoGrid } from './BentoGrid';
+export { default as OurDNA } from './OurDNA';
+export { default as ValueProposition } from './ValueProposition';
+export { default as Testimonials } from './Testimonials';
+export { default as Partners } from './Partners';
+export { default as CommunityBanner } from './CommunityBanner';
+export { default as BackedBy } from './BackedBy';
