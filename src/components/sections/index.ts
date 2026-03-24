@@ -4,6 +4,6 @@ export { default as BentoGrid } from './BentoGrid';
 export { default as OurDNA } from './OurDNA';
 export { default as ValueProposition } from './ValueProposition';
 export { default as Testimonials } from './Testimonials';
-export { default as Partners } from './Partners';
+export { default as BackersAndPartners } from './BackersAndPartners';
+export { default as HowItWorks } from './HowItWorks';
 export { default as CommunityBanner } from './CommunityBanner';
-export { default as BackedBy } from './BackedBy';

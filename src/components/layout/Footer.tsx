@@ -1,48 +1,49 @@
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import {
+  FaLinkedinIn,
+  FaXTwitter,
+  FaInstagram,
+  FaTelegram,
+  FaApple,
+  FaGooglePlay,
+  FaStar,
+  FaEnvelope,
+} from 'react-icons/fa6';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-moon-light border-t border-moon-medium pt-24 pb-10">
-      <div className="max-w-[1200px] mx-auto px-[5%]">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-2">
-            <div className="text-tomato text-4xl tracking-wide font-light lowercase mb-6">
-              bion
-            </div>
-            <p className="text-navy/70 font-medium max-w-sm">
-              The future of credit is borderless. Fast, flexible, and fully transparent stablecoin credit lines for everyone.
-            </p>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold text-navy mb-6 tracking-tight">Products</h4>
-            <ul className="space-y-4 text-navy/70 font-medium">
-              <li><a href="#" className="hover:text-tomato transition-colors">Personal Credit</a></li>
-              <li><a href="#" className="hover:text-tomato transition-colors">Business Accounts</a></li>
-              <li><a href="#" className="hover:text-tomato transition-colors">Virtual Cards</a></li>
-              <li><a href="#" className="hover:text-tomato transition-colors">Global Transfers</a></li>
-            </ul>
+    <footer className="w-full bg-[#111111] pt-12 pb-6 px-6 relative">
+      <div className="max-w-[1200px] mx-auto">
+
+        {/* Bottom Section */}
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+
+          {/* Social Icons */}
+          <div className="flex items-center gap-3">
+            {[FaLinkedinIn, FaXTwitter, FaInstagram, FaEnvelope, FaTelegram,].map((Icon, i) => (
+              <a
+                key={i}
+                href="#"
+                className="w-8 h-8 rounded-full bg-[#1a1a1a] border border-[#333333] flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#262626] transition-colors"
+              >
+                <Icon className="text-sm" />
+              </a>
+            ))}
           </div>
 
-          <div>
-            <h4 className="font-semibold text-navy mb-6 tracking-tight">Company</h4>
-            <ul className="space-y-4 text-navy/70 font-medium">
-              <li><a href="#" className="hover:text-tomato transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-tomato transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-tomato transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-tomato transition-colors">Contact</a></li>
-            </ul>
+          {/* Copyright Text */}
+          <div className="text-right text-[11px] text-gray-500 font-medium leading-relaxed">
+            <p>© 2026 Bion. All rights reserved</p>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-moon-medium text-sm font-medium text-navy/50">
-          <p>© {new Date().getFullYear()} BION. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-navy transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-navy transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-navy transition-colors">Cookie Policy</a>
-          </div>
-        </div>
+        {/* Bottom Pill Marker */}
+        <div className="w-8 h-1 bg-[#333333] rounded-full mx-auto mt-6" />
+
       </div>
     </footer>
   );

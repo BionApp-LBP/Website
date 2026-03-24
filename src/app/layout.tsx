@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body className={`${inter.className} relative`}>{children}</body>
+      <body className={`${inter.className} relative`} suppressHydrationWarning>{children}</body>
     </html>
   );
 }

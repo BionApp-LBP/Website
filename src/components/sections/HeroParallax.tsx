@@ -1,56 +1,79 @@
 'use client';
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const HeroParallax: React.FC = () => {
-  const containerRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const yText = useTransform(scrollYProgress, [0, 1], [0, -400]);
-  const yImage = useTransform(scrollYProgress, [0, 1], [0, -800]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
   return (
-    <div ref={containerRef} className="relative w-full h-[200vh] bg-periwinkle">
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center">
+    <section className="relative w-full h-[100svh] min-h-[800px] overflow-hidden bg-blue-50">
 
-        {/* Text Layer */}
-        <motion.div
-          className="text-center z-10 text-moon-light w-[90%] max-w-[1000px] -mt-[10vh]"
-          style={{ y: yText, opacity }}
-        >
-          <h1 className="text-[clamp(4rem,8vw,6.5rem)] font-bold leading-none tracking-tight mb-8">
+      {/* Sky Background Layer (Z-0) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image
+          src="/sky-bg.png"
+          alt="Sky Background"
+          fill
+          className="object-cover object-bottom opacity-80"
+          priority
+        />
+      </div>
+
+      {/* Text Layer (Z-30) - In front of the model */}
+      <div className="relative z-30 flex items-center justify-start h-full w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-[8vh]">
+        <div className="flex flex-col items-start w-full md:w-[80%] lg:w-[80%] xl:w-[80%]">
+          <motion.h1
+            className="text-[clamp(3.5rem,7vw,7rem)] font-extrabold leading-[1.05] tracking-tight mb-6 text-[#141b2d]"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             The future of credit is borderless
-          </h1>
-          <p className="text-xl font-medium leading-[1.4] mb-10 max-w-[600px] mx-auto">
-            Get early access to fair, transparent credit. Available globally, settled instantly in Web3 stablecoins.
-          </p>
-          <button className="bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors shadow-lg">
-            Join the waitlist
-          </button>
-        </motion.div>
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-2xl font-[600] leading-[1.5] mb-10 max-w-[600px] text-[#2c3954]"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Get early access to fair, transparent credit.
+            <br />
+            - 30 days Tenure
+            <br />
+            - Unsecured Credit
+            <br />
+            - Upto $1000 Credit Limit
+          </motion.p>
+          <motion.div
+            className="relative inline-block"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {/* Blue glow effect behind button */}
+            <div className="absolute inset-0 bg-blue-400 opacity-40 blur-2xl scale-125 z-0 rounded-full"></div>
+            <button
+              className="relative z-10 bg-black text-white px-10 py-4 md:px-12 md:py-4 rounded-full font-semibold hover:bg-gray-800 transition-transform hover:scale-105 shadow-xl text-lg md:text-xl"
+            >
+              Check Eligibility
+            </button>
+          </motion.div>
+        </div>
+      </div>
 
-        {/* Floating Card with VISA Card Image */}
-        <motion.div
-          className="absolute top-[75vh] left-1/2 w-[90%] max-w-[550px] h-[65vh] min-h-[500px] rounded-3xl shadow-[0_40px_100px_rgba(0,0,0,0.45)] z-20 overflow-hidden"
-          style={{ x: "-50%", y: yImage }}
-        >
+      {/* Hero Person Layer (Z-20) - In front of text */}
+      <div className="absolute bottom-0 right-[-2%] lg:right-[2%] z-20 w-[90%] max-w-[800px] h-[75%] md:h-[85%] pointer-events-none hidden lg:flex items-end justify-center drop-shadow-2xl">
+        <div className="relative w-full h-full">
           <Image
-            src="/hero-card.png"
-            alt="BION VISA Card"
+            src="/hero-model-3.png"
+            alt="Hero Person"
             fill
-            className="object-cover object-center"
-            style={{ filter: 'brightness(1.05) contrast(1.05)' }}
+            className="object-contain object-bottom object-right"
             priority
           />
-        </motion.div>
+        </div>
       </div>
-    </div>
+
+    </section>
   );
 };
 

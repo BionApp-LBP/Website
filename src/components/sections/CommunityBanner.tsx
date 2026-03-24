@@ -1,51 +1,79 @@
-'use client';
 import { motion } from 'framer-motion';
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FaTelegramPlane, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa6';
 
 export default function CommunityBanner() {
   return (
-    <section className="w-full bg-moon-light py-12 px-6">
-      <div className="max-w-[1100px] mx-auto">
-        <motion.div
-          className="relative rounded-[2rem] overflow-hidden px-10 py-10 md:py-12 flex flex-col md:flex-row items-center gap-8 justify-between"
-          style={{
-            background: 'linear-gradient(135deg, #7b6fdb 0%, #5b7fe8 55%, #6b9ef5 100%)',
-          }}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        >
-          {/* Heading */}
-          <h2 className="text-white text-[clamp(1.5rem,2.5vw,2rem)] font-bold leading-snug max-w-[320px] text-center md:text-left">
-            Join Our Community<br />To Stay Updated
-          </h2>
+    <section className="w-full bg-[#111111] py-8 md:py-12 px-6">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-10">
+          {/* Left Side: Content */}
+          <div className="flex-1 max-w-[600px]">
+            <h2 className="text-white text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+              Join Our Community
+            </h2>
+            <p className="text-[#a1a1aa] text-lg mb-8 leading-relaxed max-w-[480px]">
+              Join us to keep up with the updates.
+            </p>
 
-          {/* Buttons */}
-          <div className="flex items-center gap-4 flex-shrink-0">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white text-[#5b7fe8] font-semibold text-base px-7 py-3 rounded-full flex items-center gap-2 hover:bg-opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-            >
-              Twitter
-              <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-            <a
-              href="https://t.me"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white/10 text-white border border-white/40 font-semibold text-base px-7 py-3 rounded-full flex items-center gap-2 hover:bg-white/20 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-            >
-              Telegram
-              <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M22.265 2.428a2.048 2.048 0 0 0-2.078-.324L2.266 9.339a2.043 2.043 0 0 0 .104 3.818l3.625 1.261 2.02 6.682a.737.737 0 0 0 1.285.225l2.537-2.883 4.76 3.585a2.042 2.042 0 0 0 3.178-1.285l2.998-16.733a2.048 2.048 0 0 0-.508-1.581zM9.93 15.417l-1.04 3.439-1.315-4.35 8.14-5.448-5.785 6.359z"/>
-              </svg>
-            </a>
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="#"
+                className="group flex items-center gap-3 bg-[#262c31] text-white px-6 py-3 rounded-full hover:bg-[#2d353b] transition-colors"
+              >
+                <FaTelegramPlane className="text-[#3b82f6] text-xl" />
+                <span className="font-medium text-sm">Join Our Telegram</span>
+              </a>
+
+              <a
+                href="#"
+                className="group flex items-center gap-3 bg-[#262c31] text-white px-6 py-3 rounded-full hover:bg-[#2d353b] transition-colors"
+              >
+                <FaTwitter className="text-[#3b82f6] text-xl" />
+                <span className="font-medium text-sm">Follow Twitter</span>
+              </a>
+              <a
+                href="#"
+                className="group flex items-center gap-3 bg-[#262c31] text-white px-6 py-3 rounded-full hover:bg-[#2d353b] transition-colors"
+              >
+                <FaLinkedin className="text-[#3b82f6] text-xl" />
+                <span className="font-medium text-sm">Follow Linkedin</span>
+              </a>
+            </div>
           </div>
-        </motion.div>
+
+          {/* Right Side: 3D Community Logo */}
+          <div className="relative w-full max-w-[300px] aspect-square flex items-center justify-center flex-shrink-0">
+            <Image
+              src="/community-logo.png"
+              alt="BION Community"
+              fill
+              className="object-contain drop-shadow-2xl"
+            />
+          </div>
+        </div>
+
+        {/* Footer Row in Banner */}
+        <div className="w-full border-t border-[#262626] pt-8 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Image src="/bion-logo.png" alt="BION Logo" width={120} height={60} className="w-auto h-8 md:h-10 object-contain" priority />
+          </div>
+
+          {/* Links / Buttons */}
+          <div className="flex flex-wrap items-center gap-4">
+            <Link href="/privacy" className="px-5 py-2.5 rounded-full bg-[#1a1a1a] border border-[#333333] hover:bg-[#262626] text-white transition-all text-sm font-semibold">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="px-5 py-2.5 rounded-full bg-[#1a1a1a] border border-[#333333] hover:bg-[#262626] text-white transition-all text-sm font-semibold">
+              Terms & Conditions
+            </Link>
+          </div>
+        </div>
+
       </div>
     </section>
   );

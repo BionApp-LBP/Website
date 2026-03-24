@@ -5,6 +5,3 @@ export interface Product {
   status: 'LIVE' | 'COMING SOON';
 }
 
-export interface StickyScrollStackProps {
-  items: Product[];
-}

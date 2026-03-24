@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { HeroParallax, ValueProposition, HorizontalCards, BentoGrid, OurDNA, Testimonials, Partners, CommunityBanner, BackedBy } from '@/components/sections';
+import { HeroParallax, ValueProposition, HorizontalCards, BentoGrid, OurDNA, Testimonials, BackersAndPartners, CommunityBanner, HowItWorks } from '@/components/sections';
 import { Navbar, Footer } from '@/components/layout';
 
 
@@ -12,29 +12,18 @@ export default function Home() {
 
   return (
     <main className="w-full bg-moon-light text-navy">
-      
+
       <Navbar />
-
       <HeroParallax />
-
-      <ValueProposition />
-
       <HorizontalCards />
-      
+      <HowItWorks />
+      {/* <ValueProposition /> */}
+      <BackersAndPartners />
       <OurDNA />
-
-      <Testimonials />
-
-      <BentoGrid />
-
-      <Partners />
-
-      <BackedBy />
-
+      {/* <Testimonials /> */}
+      {/* <BentoGrid /> */}
       <CommunityBanner />
-
-      <Footer />
-
+      {/* <Footer /> */}
     </main>
   );
 }
