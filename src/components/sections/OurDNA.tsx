@@ -46,7 +46,7 @@ const OurDNA: React.FC = () => {
 
           {/* Card 2: Innovation Image Card */}
           <motion.div
-            className="md:col-span-1 bg-transparent rounded-[2.5rem] p-10 md:p-14 flex flex-col justify-end text-moon-light shadow-sm relative overflow-hidden min-h-[400px]"
+            className="md:col-span-1 bg-transparent rounded-[2.5rem] p-10 md:p-14 hidden md:flex flex-col justify-end text-moon-light shadow-sm relative overflow-hidden min-h-[400px]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -62,7 +62,7 @@ const OurDNA: React.FC = () => {
           {/* --- ROW 2: TRANSPARENCY --- */}
           {/* Card 3: Transparency Image Card */}
           <motion.div
-            className="md:col-span-1 bg-transparent rounded-[2.5rem] p-10 md:p-14 flex flex-col justify-end text-moon-light shadow-sm relative overflow-hidden min-h-[400px]"
+            className="md:col-span-1 bg-transparent rounded-[2.5rem] p-10 md:p-14 hidden md:flex flex-col justify-end text-moon-light shadow-sm relative overflow-hidden min-h-[400px]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -83,7 +83,7 @@ const OurDNA: React.FC = () => {
             variants={fadeUpVariant}
           >
             {/* Abstract Graphic representing clarity/vision */}
-            <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-20 hidden md:block">
+            <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-20 hidden ">
               <svg width="280" height="280" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
@@ -128,7 +128,7 @@ const OurDNA: React.FC = () => {
 
           {/* Card 6: Convenience Image Card */}
           <motion.div
-            className="md:col-span-1 bg-transparent rounded-[2.5rem] p-10 md:p-14 flex flex-col justify-end text-moon-light shadow-sm relative overflow-hidden min-h-[400px]"
+            className="md:col-span-1 bg-transparent rounded-[2.5rem] p-10 md:p-14 hidden md:flex flex-col justify-end text-moon-light shadow-sm relative overflow-hidden min-h-[400px]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}

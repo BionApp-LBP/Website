@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
 
       {/* Center Links & Right Button */}
       <div className="flex items-center gap-10">
-        <div className="flex gap-8 items-center font-medium text-[1.05rem] text-navy">
+        <div className="hidden md:flex gap-8 items-center font-medium text-[1.05rem] text-navy">
           <span className="cursor-pointer hover:text-tomato transition-colors">Home</span>
           {/* <span className="cursor-pointer hover:text-tomato transition-colors">Blog</span> */}
         </div>

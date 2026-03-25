@@ -48,8 +48,8 @@ export default function CommunityBanner() {
           </div>
         </div>
 
-        {/* Privacy Policy - Plain text at bottom right */}
-        <div className="absolute bottom-0 right-0 py-2">
+        {/* Privacy Policy - Plain text at bottom right on large, flows below on smaller devices */}
+        <div className="mt-8 lg:mt-0 lg:absolute lg:bottom-0 lg:right-0 py-2 w-full lg:w-auto text-center lg:text-right">
           <Link href="/privacy" className="text-[#555555] hover:text-[#a1a1aa] transition-colors text-[10px] tracking-widest uppercase font-bold">
             Privacy Policy
           </Link>
