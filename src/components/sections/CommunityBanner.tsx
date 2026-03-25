@@ -23,7 +23,9 @@ export default function CommunityBanner() {
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
-              href="#"
+              href="https://t.me/bionofficial"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 bg-[#262c31] text-white px-6 py-2.5 rounded-full hover:bg-[#2d353b] transition-all duration-300"
             >
               <FaTelegramPlane className="text-[#3b82f6] text-xl" />
@@ -31,7 +33,9 @@ export default function CommunityBanner() {
             </a>
 
             <a
-              href="#"
+              href="https://x.com/bion_app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 bg-[#262c31] text-white px-6 py-2.5 rounded-full hover:bg-[#2d353b] transition-all duration-300"
             >
               <FaTwitter className="text-[#3b82f6] text-xl" />
@@ -39,7 +43,9 @@ export default function CommunityBanner() {
             </a>
 
             <a
-              href="#"
+              href="https://www.linkedin.com/company/bion-app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 bg-[#262c31] text-white px-6 py-2.5 rounded-full hover:bg-[#2d353b] transition-all duration-300"
             >
               <FaLinkedin className="text-[#3b82f6] text-xl" />
