@@ -50,7 +50,7 @@ export default function HowItWorks() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-navy text-[clamp(2.5rem,5vw,4.5rem)] font-bold tracking-tight uppercase leading-none mb-6"
+            className="text-navy text-[clamp(2rem,4.5vw,3.5rem)] font-bold tracking-tight leading-none mb-6 whitespace-nowrap"
           >
             How It Works
           </motion.h2>

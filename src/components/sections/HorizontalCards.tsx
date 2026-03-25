@@ -58,7 +58,7 @@ const HorizontalCards: React.FC = () => {
               {/* <div className="w-12 h-12 bg-moon-light/10 rounded-2xl flex items-center justify-center backdrop-blur-md border border-moon-light/20">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
               </div> */}
-              <div className="bg-moon-light/20 text-moon-light text-xs font-bold px-4 py-1.5 rounded-[12px] tracking-wider backdrop-blur-md border border-moon-light/20">
+              <div className="bg-black/35 text-moon-light text-xs font-bold px-4 py-1.5 rounded-[12px] tracking-wider backdrop-blur-md border border-moon-light/20">
                 COMING SOON
               </div>
             </div>
@@ -82,19 +82,25 @@ const HorizontalCards: React.FC = () => {
             </div>
 
             <div className="flex justify-start w-full relative z-10 mb-auto">
-              <div className="bg-moon-light/20 text-moon-light text-xs font-bold px-4 py-1.5 rounded-[12px] tracking-wider backdrop-blur-md border border-moon-light/20 shadow-sm">
+              <div className="bg-black/35 text-moon-light text-xs font-bold px-4 py-1.5 rounded-[12px] tracking-wider backdrop-blur-md border border-moon-light/20 shadow-sm">
                 COMING SOON
               </div>
             </div>
 
             <div className="relative z-10 mt-auto drop-shadow-md">
-              <h3 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">VISA Cards</h3>
-              <p className="text-[1.05rem] opacity-90 leading-relaxed font-medium">Global merchant acceptance. Navigate FX volatility with the best rates and earn cashback & rewards for every spend.</p>
+              <h3 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">Digital Cards</h3>
+              <p className="text-[1.05rem] opacity-90 leading-relaxed font-medium">Load your card with stablecoins and spend world wide.</p>
             </div>
           </motion.div>
 
           {/* Card 3: Scan-to-Pay (Square) */}
-          <motion.div className="md:col-span-1 md:row-span-1 bg-navy text-moon-light rounded-[2.5rem] flex flex-col p-10 relative overflow-hidden shadow-sm min-h-[340px]" variants={fadeUpVariant}>
+          <motion.a
+            href="https://t.me/bionapp_bot?startapp=ref_862780270"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:col-span-1 md:row-span-1 bg-navy text-moon-light rounded-[2.5rem] flex flex-col p-10 relative overflow-hidden shadow-sm min-h-[340px] cursor-pointer"
+            variants={fadeUpVariant}
+          >
             {/* Background Image Container */}
             <div className="absolute inset-0 z-0 pointer-events-none">
               <img
@@ -118,10 +124,16 @@ const HorizontalCards: React.FC = () => {
               <h3 className="text-2xl font-bold mb-2 tracking-tight">Scan-to-Pay</h3>
               <p className="text-[0.95rem] opacity-90 leading-relaxed font-medium">Use your credit for global spend. Fiat settlement with merchants across offline and online acceptance.</p>
             </div>
-          </motion.div>
+          </motion.a>
 
           {/* Card 4: Prepaid Instruments (Square) */}
-          <motion.div className="md:col-span-1 md:row-span-1 bg-[#fdcba2] text-moon-light rounded-[2.5rem] flex flex-col p-10 relative overflow-hidden shadow-sm min-h-[340px]" variants={fadeUpVariant}>
+          <motion.a
+            href="https://t.me/bionapp_bot?startapp=ref_862780270"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:col-span-1 md:row-span-1 bg-[#fdcba2] text-moon-light rounded-[2.5rem] flex flex-col p-10 relative overflow-hidden shadow-sm min-h-[340px] cursor-pointer"
+            variants={fadeUpVariant}
+          >
             {/* Background Image Container */}
             <div className="absolute inset-0 z-0 pointer-events-none">
               <img
@@ -145,7 +157,7 @@ const HorizontalCards: React.FC = () => {
               <h3 className="text-2xl font-bold mb-2 tracking-tight">Prepaid Instruments</h3>
               <p className="text-[0.95rem] opacity-90 leading-relaxed font-medium">Purchase vouchers, pay in stablecoin and use for everyday needs globally across 4000+ brands in 40+ countries.</p>
             </div>
-          </motion.div>
+          </motion.a>
 
         </motion.div>
 

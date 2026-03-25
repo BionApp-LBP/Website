@@ -61,11 +61,11 @@ export default function BackersAndPartners() {
                 className={`relative w-full flex justify-center col-span-1 ${desktopColSpan} opacity-80 hover:opacity-100 transition-all duration-300 transform hover:scale-105`}
               >
                 <div className="relative w-32 h-16 md:w-56 md:h-20">
-                  <Image 
-                    src={logo.image} 
-                    alt={logo.name} 
-                    fill 
-                    className="object-contain" 
+                  <Image
+                    src={logo.image}
+                    alt={logo.name}
+                    fill
+                    className="object-contain"
                     sizes="(max-width: 768px) 150px, 200px"
                   />
                 </div>
