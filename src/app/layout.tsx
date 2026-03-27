@@ -1,6 +1,7 @@
 import { Inter, Geist } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
+import Script from "next/script";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -42,6 +43,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-E85HBG72VH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-E85HBG72VH');
+          `}
+        </Script>
+      </head>
       <body className={`${inter.className} relative`} suppressHydrationWarning>{children}</body>
     </html>
   );
