@@ -1,0 +1,16 @@
+services:
+  bion-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bion-website
+    restart: unless-stopped
+    init: true
+    ports:
+      - "127.0.0.1:3002:3000"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "--quiet", "http://127.0.0.1:3000/"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 30s

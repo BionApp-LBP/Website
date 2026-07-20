@@ -1,19 +1,16 @@
-import { Inter, Geist } from "next/font/google";
 import "@/styles/globals.css";
-import { cn } from "@/lib/utils";
+import "@/styles/people.css";
+import "@/styles/globe.css";
+import "@/styles/hero-world.css";
 import Script from "next/script";
-
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   metadataBase: new URL("https://bionapp.com"),
-  title: "BION | The Future of Credit is Borderless",
-  description: "Get instant, unsecured stablecoin credit with embedded payment rails. Experience the future of finance with AI-powered on-chain underwriting, up to $1000 limit, and 30-day tenure.",
+  title: "Bion | Credit that moves at your speed",
+  description: "Unsecured stablecoin credit for consumers, built for everyday spending with Bion.",
   openGraph: {
-    title: "BION | The Future of Credit is Borderless",
-    description: "Get instant, unsecured stablecoin credit with embedded payment rails. AI-powered on-chain underwriting with up to $1000 limit.",
+    title: "Bion | Credit that moves at your speed",
+    description: "Unsecured stablecoin credit for consumers, made simple for everyday life.",
     url: "https://bionapp.com",
     siteName: "BION",
     images: [
@@ -42,7 +39,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en">
       <head>
         {/* Google Analytics */}
         <Script
@@ -58,7 +55,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body className={`${inter.className} relative`} suppressHydrationWarning>{children}</body>
+      <body className="relative" suppressHydrationWarning>{children}</body>
     </html>
   );
 }
