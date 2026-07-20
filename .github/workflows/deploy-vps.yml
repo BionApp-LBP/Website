@@ -1,0 +1,52 @@
+name: Deploy Bion website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: bion-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Configure SSH
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/bion_deploy
+          chmod 600 ~/.ssh/bion_deploy
+          ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts
+
+      - name: Sync website source
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+        run: |
+          rsync -az --delete \
+            --exclude '.git' \
+            --exclude '.next' \
+            --exclude 'node_modules' \
+            -e 'ssh -i ~/.ssh/bion_deploy' \
+            ./ "$VPS_USER@$VPS_HOST:/opt/bion-website/"
+
+      - name: Build and restart Bion
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+        run: |
+          ssh -i ~/.ssh/bion_deploy "$VPS_USER@$VPS_HOST" \
+            'cd /opt/bion-website && docker compose -f compose.vps.yml up -d --build && docker image prune -f'
+
