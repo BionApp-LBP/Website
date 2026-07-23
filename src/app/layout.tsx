@@ -7,10 +7,10 @@ import Script from "next/script";
 export const metadata = {
   metadataBase: new URL("https://bionapp.com"),
   title: "Bion | Credit that moves at your speed",
-  description: "Unsecured stablecoin credit for consumers, built for everyday spending with Bion.",
+  description: "Unsecured stablecoin credit and seamless stablecoin payments for consumers, built for everyday spending with Bion.",
   openGraph: {
     title: "Bion | Credit that moves at your speed",
-    description: "Unsecured stablecoin credit for consumers, made simple for everyday life.",
+    description: "Unsecured stablecoin credit and stablecoin payments for consumers, made simple for everyday life.",
     url: "https://bionapp.com",
     siteName: "BION",
     images: [
