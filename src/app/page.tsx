@@ -19,7 +19,7 @@ export default function Home() {
 
     <section className="hero shell" id="top">
       <div className="heroCopy">
-        <h1>Stablecoin credit<br/>that keeps <em>life moving.</em></h1>
+        <h1>Stablecoin credit<br/>and payments that keep <em>life moving.</em></h1>
         <p>Unsecured stablecoin credit and seamless stablecoin payments for consumers—ready for everyday spending without locking up the full amount you borrow.</p>
         <div className="heroActions"><a className="primary" href="https://app.bionapp.com">See my credit limit <span>→</span></a></div>
         <div className="heroNote"><Tick/> Decision in minutes. No hard credit check.</div>
