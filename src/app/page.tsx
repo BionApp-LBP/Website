@@ -14,7 +14,7 @@ export default function Home() {
     <nav className="nav shell">
       <a href="#top" className="logo"><Image src="/bion_logo_1.png" alt="Bion" width={112} height={44}/></a>
       <div className="navLinks"><a href="#how">How it works</a></div>
-      <a className="navCta" href="https://app.bionapp.com">See my limit <span>↗</span></a>
+      <a className="navCta" href="https://app.bionapp.com">Get credit <span>↗</span></a>
     </nav>
 
     <section className="hero shell" id="top">
@@ -23,7 +23,10 @@ export default function Home() {
         <p>Unsecured stablecoin credit and seamless stablecoin payments for consumers—ready for everyday spending without locking up the full amount you borrow.</p>
         <div className="heroActions" style={{flexWrap:'wrap'}}>
           <a className="primary" href="https://app.bionapp.com">Get credit <span>→</span></a>
-          <a className="primary" style={{background:'#229ed9'}} href="https://t.me/bionapp_bot" target="_blank" rel="noopener noreferrer">Open Telegram Mini App <span>↗</span></a>
+          <a className="primary" style={{background:'#229ed9',padding:'13px 17px',fontSize:'13px',display:'inline-flex',alignItems:'center',gap:'8px'}} href="https://t.me/bionapp_bot" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M21.7 3.3a1 1 0 0 0-1-.2L2.8 10a1 1 0 0 0 .1 1.9l4.6 1.5 1.8 5.5a1 1 0 0 0 1.7.4l2.7-2.8 4.7 3.5a1 1 0 0 0 1.6-.6l2-15.2a1 1 0 0 0-.3-.9ZM9 12.6l8.8-5.5-7.3 7.1-.4 2.3L9 12.6Z"/></svg>
+            Telegram Mini App
+          </a>
         </div>
         <div className="heroNote"><Tick/> Decision in minutes. No hard credit check.</div>
       </div>
