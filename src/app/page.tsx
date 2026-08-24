@@ -21,7 +21,10 @@ export default function Home() {
       <div className="heroCopy">
         <h1>Stablecoin credit<br/>and payments that keep <em>life moving.</em></h1>
         <p>Unsecured stablecoin credit and seamless stablecoin payments for consumers—ready for everyday spending without locking up the full amount you borrow.</p>
-        <div className="heroActions"><a className="primary" href="https://app.bionapp.com">Get credit <span>→</span></a></div>
+        <div className="heroActions">
+          <a className="primary" href="https://app.bionapp.com">Get credit <span>→</span></a>
+          <a className="primary telegramCta" href="https://t.me/bionapp_bot" target="_blank" rel="noopener noreferrer">Open Telegram Mini App <span>↗</span></a>
+        </div>
         <div className="heroNote"><Tick/> Decision in minutes. No hard credit check.</div>
       </div>
       <div className="heroArt">
