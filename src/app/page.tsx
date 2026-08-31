@@ -13,7 +13,7 @@ export default function Home() {
   return <main>
     <nav className="nav shell">
       <a href="#top" className="logo"><Image src="/bion_logo_1.png" alt="Bion" width={112} height={44}/></a>
-      <div className="navLinks"><a href="#how">How it works</a></div>
+      <div className="navLinks"><a href="#how">How it works</a><a href="#support">Support</a></div>
       <a className="navCta" href="https://app.bionapp.com">Get credit <span>↗</span></a>
     </nav>
 
@@ -82,8 +82,8 @@ export default function Home() {
 
     <section className="cta shell"><div><div className="kicker light">READY WHEN YOU ARE</div><h2>See what your wallet<br/>can unlock.</h2><p>Check your limit in minutes. No hard credit check.</p></div><a href="https://app.bionapp.com">Get started <span>→</span></a></section>
 
-    <section className="community shell"><div><div className="kicker">JOIN THE BION COMMUNITY</div><h2>Stay close to what’s next.</h2><p>Get product updates, community news and new ways to use Bion.</p></div><div className="communityLinks"><a href="https://t.me/bionofficial" target="_blank" rel="noreferrer"><span className="telegramMark">➤</span><div><small>COMMUNITY</small><b>Join Telegram</b></div><em>↗</em></a><a href="https://x.com/bion_app" target="_blank" rel="noreferrer"><span className="xMark">𝕏</span><div><small>FOLLOW US</small><b>Follow on X</b></div><em>↗</em></a></div></section>
+    <section className="community shell" id="support"><div><div className="kicker">COMMUNITY & SUPPORT</div><h2>Stay close. Get help when you need it.</h2><p>Follow Bion for product updates or email our customer-support team with any question.</p></div><div className="communityLinks"><a className="supportLink" href="mailto:connect@bionapp.com"><span className="emailMark" aria-hidden="true">✉</span><div><small>CUSTOMER SUPPORT</small><b>Email connect@bionapp.com</b></div><em>↗</em></a><a href="https://t.me/bionofficial" target="_blank" rel="noreferrer"><span className="telegramMark">➤</span><div><small>COMMUNITY</small><b>Join Telegram</b></div><em>↗</em></a><a href="https://x.com/bion_app" target="_blank" rel="noreferrer"><span className="xMark">𝕏</span><div><small>FOLLOW US</small><b>Follow on X</b></div><em>↗</em></a></div></section>
 
-    <footer className="shell"><a className="footerLogo" href="#top"><Image src="/bion_logo_1.png" alt="Bion" width={100} height={40}/></a><div><a href="/privacy">Privacy</a></div><small>© 2026 Bion. All rights reserved.</small></footer>
+    <footer className="shell"><a className="footerLogo" href="#top"><Image src="/bion_logo_1.png" alt="Bion" width={100} height={40}/></a><div><a href="mailto:connect@bionapp.com">Support</a><a href="/privacy">Privacy</a></div><small>© 2026 Bion. All rights reserved.</small></footer>
   </main>
 }
