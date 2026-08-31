@@ -31,7 +31,7 @@ export default function Home() {
         <div className="heroNote"><Tick/> Decision in minutes. No hard credit check.</div>
       </div>
       <div className="heroCredit" aria-label="Get Bion credit">
-        <div className="heroCreditTop"><div><small>GET CREDIT</small><strong>Start here</strong></div><a href="https://app.bionapp.com/stao-pilot">Open full screen ↗</a></div>
+        <a className="heroCreditOpen" href="https://app.bionapp.com/stao-pilot">Open full screen ↗</a>
         <iframe title="Get Bion credit" src="https://app.bionapp.com/stao-pilot?embed=1" allow="clipboard-write" />
       </div>
     </section>
