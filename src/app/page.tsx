@@ -14,7 +14,7 @@ export default function Home() {
     <nav className="nav shell">
       <a href="#top" className="logo"><Image src="/bion_logo_1.png" alt="Bion" width={112} height={44}/></a>
       <div className="navLinks"><a href="#how">How it works</a><a href="#support">Support</a></div>
-      <a className="navCta" href="https://app.bionapp.com">Get credit <span>↗</span></a>
+      <div className="navActions"><a className="navCredit" href="https://app.bionapp.com/credit-dashboard">My Credit</a><a className="navTelegram" href="https://t.me/bionapp_bot" target="_blank" rel="noopener noreferrer" aria-label="Open Bion Telegram Mini App"><svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M21.7 3.3a1 1 0 0 0-1-.2L2.8 10a1 1 0 0 0 .1 1.9l4.6 1.5 1.8 5.5a1 1 0 0 0 1.7.4l2.7-2.8 4.7 3.5a1 1 0 0 0 1.6-.6l2-15.2a1 1 0 0 0-.3-.9ZM9 12.6l8.8-5.5-7.3 7.1-.4 2.3L9 12.6Z"/></svg><span>Telegram Mini App</span></a></div>
     </nav>
 
     <section className="hero shell" id="top">
@@ -22,7 +22,7 @@ export default function Home() {
         <h1>Stablecoin credit<br/>and payments that keep <em>life moving.</em></h1>
         <p>Unsecured stablecoin credit and seamless stablecoin payments for consumers—ready for everyday spending without locking up the full amount you borrow.</p>
         <div className="heroActions" style={{flexWrap:'wrap'}}>
-          <a className="primary" href="https://app.bionapp.com">Get credit <span>→</span></a>
+          <a className="primary" href="https://app.bionapp.com/credit-dashboard">My Credit <span>→</span></a>
           <a className="primary" style={{background:'#229ed9',padding:'13px 17px',fontSize:'13px',display:'inline-flex',alignItems:'center',gap:'8px'}} href="https://t.me/bionapp_bot" target="_blank" rel="noopener noreferrer">
             <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M21.7 3.3a1 1 0 0 0-1-.2L2.8 10a1 1 0 0 0 .1 1.9l4.6 1.5 1.8 5.5a1 1 0 0 0 1.7.4l2.7-2.8 4.7 3.5a1 1 0 0 0 1.6-.6l2-15.2a1 1 0 0 0-.3-.9ZM9 12.6l8.8-5.5-7.3 7.1-.4 2.3L9 12.6Z"/></svg>
             Telegram Mini App
@@ -30,13 +30,9 @@ export default function Home() {
         </div>
         <div className="heroNote"><Tick/> Decision in minutes. No hard credit check.</div>
       </div>
-      <div className="heroArt">
-        <div className="heroImageLabel"><span>●</span> CREDIT UP TO $1,000</div>
-        <div className="worldHalo"></div><div className="worldOrbit worldOrbitOne"></div><div className="worldOrbit worldOrbitTwo"></div>
-        <Image className="heroWorld" src="/hero_globe.png" alt="Bion connects people to borderless credit around the world" width={700} height={700} priority/>
-        <div className="consumerPanel"><div className="consumerTop"><span className="consumerMark">b</span><span>•••</span></div><small>AVAILABLE TO SPEND</small><strong>$760</strong><div className="consumerLimit"><span>Credit limit</span><b>$1,000</b></div><div className="consumerMeter"><i></i></div><div className="stablecoinRow"><span><i>$</i><b>USDC</b></span><span><i>₮</i><b>USDT</b></span></div><a href="https://app.bionapp.com">Use my credit <span>→</span></a><div className="consumerDue"><span><small>NEXT PAYMENT</small><b>$80</b></span><span><small>DUE</small><b>30 Aug</b></span></div></div>
-        <div className="miniBadge badgeOne"><span>✓</span><div><small>FLEXIBLE ACCESS</small><b>Credit ready when needed</b></div></div>
-        <div className="miniBadge badgeTwo"><span>✓</span><div><small>READY TO USE</small><b>Shop, travel, handle life</b></div></div>
+      <div className="heroCredit" aria-label="Get Bion credit">
+        <div className="heroCreditTop"><div><small>GET CREDIT</small><strong>Start here</strong></div><a href="https://app.bionapp.com/stao-pilot">Open full screen ↗</a></div>
+        <iframe title="Get Bion credit" src="https://app.bionapp.com/stao-pilot?embed=1" allow="clipboard-write" />
       </div>
     </section>
 
@@ -84,6 +80,6 @@ export default function Home() {
 
     <section className="community shell" id="support"><div><div className="kicker">COMMUNITY & SUPPORT</div><h2>Stay close. Get help when you need it.</h2><p>Follow Bion for product updates or email our customer-support team with any question.</p></div><div className="communityLinks"><a className="supportLink" href="mailto:connect@bionapp.com"><span className="emailMark" aria-hidden="true">✉</span><div><small>CUSTOMER SUPPORT</small><b>Email connect@bionapp.com</b></div><em>↗</em></a><a href="https://t.me/bionofficial" target="_blank" rel="noreferrer"><span className="telegramMark">➤</span><div><small>COMMUNITY</small><b>Join Telegram</b></div><em>↗</em></a><a href="https://x.com/bion_app" target="_blank" rel="noreferrer"><span className="xMark">𝕏</span><div><small>FOLLOW US</small><b>Follow on X</b></div><em>↗</em></a></div></section>
 
-    <footer className="shell"><a className="footerLogo" href="#top"><Image src="/bion_logo_1.png" alt="Bion" width={100} height={40}/></a><div><a href="mailto:connect@bionapp.com">Support</a><a href="/privacy">Privacy</a></div><small>© 2026 Bion. All rights reserved.</small></footer>
+    <footer className="shell"><a className="footerLogo" href="#top"><Image src="/bion_logo_1.png" alt="Bion" width={100} height={40}/></a><div><a href="https://app.bionapp.com/credit-dashboard">My Credit</a><a href="https://t.me/bionapp_bot" target="_blank" rel="noreferrer">Telegram Mini App</a><a href="mailto:connect@bionapp.com">Support</a><a href="/privacy">Privacy</a></div><small>© 2026 Bion. All rights reserved.</small></footer>
   </main>
 }
