@@ -7,7 +7,7 @@ const creditNetworks = [
   { name: 'Ethereum', id: 'ethereum' }, { name: 'Base', id: 'base' },
   { name: 'Arbitrum', id: 'arbitrum' }, { name: 'Optimism', id: 'optimism' },
   { name: 'Polygon', id: 'polygon' }, { name: 'BNB Chain', id: 'bnb' },
-  { name: 'Avalanche', id: 'avalanche' },
+  { name: 'Avalanche', id: 'avalanche' }, { name: 'Tempo', id: 'tempo' },
 ] as const;
 
 type CreditNetwork = (typeof creditNetworks)[number]['id'];
@@ -19,6 +19,7 @@ function NetworkLogo({ network }: { network: CreditNetwork }) {
   if (network === 'optimism') return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#ff0420"/><text x="16" y="19.5" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="900">OP</text></svg>;
   if (network === 'polygon') return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#8247e5"/><path fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" d="m9 13.2 4-2.3 4 2.3v4.6l-4 2.3-4-2.3v-4.6Zm6 0 4-2.3 4 2.3v4.6l-4 2.3-2-1.2"/></svg>;
   if (network === 'bnb') return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#f3ba2f"/><path fill="#fff" d="m16 7 3.2 3.2-2 2L16 11l-1.2 1.2-2-2L16 7Zm-5.8 5.8 2 2L11 16l1.2 1.2-2 2L7 16l3.2-3.2Zm11.6 0L25 16l-3.2 3.2-2-2L21 16l-1.2-1.2 2-2ZM16 13l3 3-3 3-3-3 3-3Zm0 8 1.2-1.2 2 2L16 25l-3.2-3.2 2-2L16 21Z"/></svg>;
+  if (network === 'tempo') return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#171717"/><path fill="#fff" d="M8 9h16v4h-6v11h-4V13H8V9Z"/></svg>;
   return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#e84142"/><path fill="#fff" d="M15.9 7.2c.6 0 1 .4 1.3 1l6.4 11.3c.4.7.1 1.3-.7 1.3h-3.6l-3.4-6.1-3.4 6.1H9c-.8 0-1.1-.6-.7-1.3l6.4-11.3c.3-.6.7-1 1.2-1Z"/></svg>;
 }
 
@@ -40,7 +41,7 @@ export default function Home() {
         <h1>Your credit journey,<br/>in one place.</h1>
         <p>Connect your wallet to check eligibility, receive your credit decision and manage every step—from agreement to repayment—in one place.</p>
         <div className="heroNetworks" aria-label="Networks analyzed for credit eligibility">
-          <strong>Wallet activity analyzed across 7 EVM networks</strong>
+          <strong>Wallet activity analyzed across 8 EVM networks</strong>
           <div>
             {creditNetworks.map(network => <span key={network.id}><i><NetworkLogo network={network.id}/></i>{network.name}</span>)}
           </div>
