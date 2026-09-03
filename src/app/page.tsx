@@ -3,7 +3,24 @@
 import Image from 'next/image';
 import { useMemo, useState } from 'react';
 
-const Tick = () => <span className="tick">✓</span>;
+const creditNetworks = [
+  { name: 'Ethereum', id: 'ethereum' }, { name: 'Base', id: 'base' },
+  { name: 'Arbitrum', id: 'arbitrum' }, { name: 'Optimism', id: 'optimism' },
+  { name: 'Polygon', id: 'polygon' }, { name: 'BNB Chain', id: 'bnb' },
+  { name: 'Avalanche', id: 'avalanche' },
+] as const;
+
+type CreditNetwork = (typeof creditNetworks)[number]['id'];
+
+function NetworkLogo({ network }: { network: CreditNetwork }) {
+  if (network === 'ethereum') return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#627eea"/><path fill="#fff" d="m16 4.8-6.8 11.3 6.8 4 6.8-4L16 4.8Zm0 16.7-6.8-4 6.8 9.7 6.8-9.7-6.8 4Z"/></svg>;
+  if (network === 'base') return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#0052ff"/><path fill="#fff" d="M15.7 25C10.9 25 7 21 7 16s3.9-9 8.7-9c4.5 0 8.2 3.5 8.7 8H13v2h11.4c-.5 4.5-4.2 8-8.7 8Z"/></svg>;
+  if (network === 'arbitrum') return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#213147"/><path fill="#9dcced" d="M8.4 23.1 14 7.8h3.2l-5.6 15.3H8.4Z"/><path fill="#fff" d="m13.4 23.1 5.5-15.3h3.3l-5.6 15.3h-3.2Z"/><path fill="#28a0f0" d="m18.4 23.1 3.4-9.3 1.8 5-1.5 4.3h-3.7Z"/></svg>;
+  if (network === 'optimism') return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#ff0420"/><text x="16" y="19.5" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="900">OP</text></svg>;
+  if (network === 'polygon') return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#8247e5"/><path fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" d="m9 13.2 4-2.3 4 2.3v4.6l-4 2.3-4-2.3v-4.6Zm6 0 4-2.3 4 2.3v4.6l-4 2.3-2-1.2"/></svg>;
+  if (network === 'bnb') return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#f3ba2f"/><path fill="#fff" d="m16 7 3.2 3.2-2 2L16 11l-1.2 1.2-2-2L16 7Zm-5.8 5.8 2 2L11 16l1.2 1.2-2 2L7 16l3.2-3.2Zm11.6 0L25 16l-3.2 3.2-2-2L21 16l-1.2-1.2 2-2ZM16 13l3 3-3 3-3-3 3-3Zm0 8 1.2-1.2 2 2L16 25l-3.2-3.2 2-2L16 21Z"/></svg>;
+  return <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#e84142"/><path fill="#fff" d="M15.9 7.2c.6 0 1 .4 1.3 1l6.4 11.3c.4.7.1 1.3-.7 1.3h-3.6l-3.4-6.1-3.4 6.1H9c-.8 0-1.1-.6-.7-1.3l6.4-11.3c.3-.6.7-1 1.2-1Z"/></svg>;
+}
 
 export default function Home() {
   const [amount, setAmount] = useState(600);
@@ -19,16 +36,16 @@ export default function Home() {
 
     <section className="hero shell" id="top">
       <div className="heroCopy">
-        <h1>Stablecoin credit<br/>and payments that keep <em>life moving.</em></h1>
-        <p>Unsecured stablecoin credit and seamless stablecoin payments for consumers—ready for everyday spending without locking up the full amount you borrow.</p>
-        <div className="heroActions" style={{flexWrap:'wrap'}}>
-          <a className="primary" href="https://app.bionapp.com/credit-dashboard">My Credit <span>→</span></a>
-          <a className="primary" style={{background:'#229ed9',padding:'13px 17px',fontSize:'13px',display:'inline-flex',alignItems:'center',gap:'8px'}} href="https://t.me/bionapp_bot" target="_blank" rel="noopener noreferrer">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M21.7 3.3a1 1 0 0 0-1-.2L2.8 10a1 1 0 0 0 .1 1.9l4.6 1.5 1.8 5.5a1 1 0 0 0 1.7.4l2.7-2.8 4.7 3.5a1 1 0 0 0 1.6-.6l2-15.2a1 1 0 0 0-.3-.9ZM9 12.6l8.8-5.5-7.3 7.1-.4 2.3L9 12.6Z"/></svg>
-            Telegram Mini App
-          </a>
+        <div className="kicker">BION CREDIT</div>
+        <h1>Your credit journey,<br/>in one place.</h1>
+        <p>Connect your wallet to check eligibility, receive your credit decision and manage every step—from agreement to repayment—in one place.</p>
+        <div className="heroNetworks" aria-label="Networks analyzed for credit eligibility">
+          <strong>Wallet activity analyzed across 7 EVM networks</strong>
+          <div>
+            {creditNetworks.map(network => <span key={network.id}><i><NetworkLogo network={network.id}/></i>{network.name}</span>)}
+          </div>
         </div>
-        <div className="heroNote"><Tick/> Decision in minutes. No hard credit check.</div>
+        <div className="heroSettlement"><b>Settlement network: Base mainnet</b><span>Disbursement and repayment are completed in USDC on Base.</span></div>
       </div>
       <div className="heroCredit" aria-label="Get Bion credit">
         <a className="heroCreditOpen" href="https://app.bionapp.com/stao-pilot">Open full screen ↗</a>
