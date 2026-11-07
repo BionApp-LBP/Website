@@ -67,8 +67,6 @@ export default function Home() {
       </div>
     </section>
 
-    <div className="marquee"><div>✦ SHOP &nbsp;&nbsp; ✦ TRAVEL &nbsp;&nbsp; ✦ STABLECOIN PAYMENTS &nbsp;&nbsp; ✦ PAY ANYWHERE &nbsp;&nbsp; ✦ REUSE YOUR LIMIT &nbsp;&nbsp; ✦ NO HARD CREDIT CHECK &nbsp;&nbsp; ✦ READY WHEN LIFE HAPPENS</div></div>
-
     <section className="people shell">
       <div className="peopleVisual">
         <Image className="peopleLifestyle" src="/bion-cafe-customer-v1.png" alt="A Bion customer using her phone at a neighbourhood cafe" fill sizes="(max-width: 850px) 100vw, 540px"/>
