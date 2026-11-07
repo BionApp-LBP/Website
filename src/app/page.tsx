@@ -10,6 +10,8 @@ const creditNetworks = [
   { name: 'Avalanche', id: 'avalanche' }, { name: 'Tempo', id: 'tempo' },
 ] as const;
 
+const launchAppUrl = 'https://app.bionapp.com/stao-pilot';
+
 type CreditNetwork = (typeof creditNetworks)[number]['id'];
 
 function NetworkLogo({ network }: { network: CreditNetwork }) {
@@ -35,22 +37,33 @@ export default function Home() {
       <div className="navActions"><a className="navCredit" href="https://app.bionapp.com/credit-dashboard">My Credit</a><a className="navTelegram" href="https://t.me/bionapp_bot" target="_blank" rel="noopener noreferrer" aria-label="Open Bion Telegram Mini App"><svg aria-hidden="true" viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M21.7 3.3a1 1 0 0 0-1-.2L2.8 10a1 1 0 0 0 .1 1.9l4.6 1.5 1.8 5.5a1 1 0 0 0 1.7.4l2.7-2.8 4.7 3.5a1 1 0 0 0 1.6-.6l2-15.2a1 1 0 0 0-.3-.9ZM9 12.6l8.8-5.5-7.3 7.1-.4 2.3L9 12.6Z"/></svg><span>Telegram Mini App</span></a></div>
     </nav>
 
-    <section className="hero shell" id="top">
-      <div className="heroCopy">
-        <div className="kicker">BION CREDIT</div>
-        <h1>Your credit journey,<br/>in one place.</h1>
-        <p>Connect your wallet to check eligibility, receive your credit decision and manage every step—from agreement to repayment—in one place.</p>
-        <div className="heroNetworks" aria-label="Networks analyzed for credit eligibility">
-          <strong>Wallet activity analyzed across 8 EVM networks</strong>
-          <div>
-            {creditNetworks.map(network => <span key={network.id}><i><NetworkLogo network={network.id}/></i>{network.name}</span>)}
+    <section className="tasteHero" id="top" aria-labelledby="taste-hero-title">
+      <div className="tasteHeroCopy">
+        <h1 id="taste-hero-title">Onchain credit and payments, in one app.</h1>
+        <p>Access stablecoin credit using your onchain activity, buy digital gift cards, use Scan to Pay and manage repayments in Bion. Local on/off-ramps are launching soon.</p>
+        <div className="tasteHeroActions">
+          <div className="tasteButtonRow">
+            <a className="tasteButton tasteButtonPrimary" href={launchAppUrl}>Launch App</a>
+            <a className="tasteButton tasteButtonTelegram" href="https://t.me/bionapp_bot" target="_blank" rel="noopener noreferrer" aria-label="Open Bion Telegram Mini App"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21.7 3.3a1 1 0 0 0-1-.2L2.8 10a1 1 0 0 0 .1 1.9l4.6 1.5 1.8 5.5a1 1 0 0 0 1.7.4l2.7-2.8 4.7 3.5a1 1 0 0 0 1.6-.6l2-15.2a1 1 0 0 0-.3-.9ZM9 12.6l8.8-5.5-7.3 7.1-.4 2.3L9 12.6Z"/></svg>Telegram Mini App</a>
           </div>
+          <div className="tasteAndroidSoon" aria-label="Android app coming soon on Google Play"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="#34a853" d="m3.5 2.7 10.9 9.2L3.5 21.3a2.5 2.5 0 0 1-.5-1.5V4.2c0-.6.2-1.1.5-1.5Z"/><path fill="#fbbc04" d="m14.4 11.9 3.1-2.6 3.4 1.9c1 .6 1 1.6 0 2.2l-3.4 1.9-3.1-3.4Z"/><path fill="#4285f4" d="M3.5 2.7c.5-.5 1.2-.6 1.9-.2l12.1 6.8-3.1 2.6L3.5 2.7Z"/><path fill="#ea4335" d="m14.4 11.9 3.1 3.4-12.1 6.8c-.7.4-1.4.3-1.9-.2l10.9-10Z"/></svg><span><small>ANDROID APP</small><strong>Google Play</strong></span><em>Coming soon</em></div>
         </div>
-        <div className="heroSettlement"><b>Settlement network: Base mainnet</b><span>Disbursement and repayment are completed in USDC on Base.</span></div>
       </div>
-      <div className="heroCredit" aria-label="Get Bion credit">
-        <a className="heroCreditOpen" href="https://app.bionapp.com/stao-pilot">Open full screen ↗</a>
-        <iframe title="Get Bion credit" src="https://app.bionapp.com/stao-pilot?embed=1" allow="clipboard-write" />
+
+      <div className="tasteHeroCollage" aria-label="Bion credit and Scan to Pay product screens">
+        <a className="tasteDevice tasteDevicePrimary" href={launchAppUrl} aria-label="Open the Bion credit application"><Image src="/bion-credit-application.png" alt="Bion credit eligibility and application screen" fill priority sizes="(max-width: 640px) 58vw, 300px" /><div className="tasteNetworkOverlay"><strong>Wallet activity analyzed across 8 EVM networks</strong><div>{creditNetworks.map(network => <span key={network.id}><i><NetworkLogo network={network.id}/></i>{network.name}</span>)}</div><small>Settlement network: Base mainnet</small><em>Disbursement and repayment are completed in USDC on Base.</em></div></a>
+        <a className="tasteDevice tasteDeviceSecondary tasteScanDevice" href={launchAppUrl} aria-label="Open Bion Scan to Pay">
+          <div className="tasteScanScreen">
+            <div className="tasteScanTop"><b>bion</b><span>Scan to Pay</span></div>
+            <small>MERCHANT PAYMENT</small>
+            <div className="tasteScanMerchant"><span>Urban Coffee</span><strong>$12.40</strong></div>
+            <div className="tasteQrWrap" aria-hidden="true"><svg viewBox="0 0 96 96"><rect width="96" height="96" rx="10" fill="#fff"/><path fill="#1c1820" d="M10 10h28v28H10V10Zm6 6v16h16V16H16Zm42-6h28v28H58V10Zm6 6v16h16V16H64ZM10 58h28v28H10V58Zm6 6v16h16V64H16Zm30-24h8v8h-8v-8Zm12 4h8v8h-8v-8Zm12 4h8v8h-8v-8ZM42 56h8v8h-8v-8Zm12 4h8v8h-8v-8Zm12-4h8v8h-8v-8Zm12 4h8v8h-8v-8ZM42 72h8v8h-8v-8Zm12 4h8v10h-8V76Zm12-8h8v8h-8v-8Zm12 10h8v8h-8v-8Z"/></svg></div>
+            <div className="tasteScanPayment"><span><i>$</i><b>Pay with USDC</b></span><small>Base</small></div>
+            <div className="tasteScanPay">Confirm payment <span>→</span></div>
+            <em>Scan a supported merchant QR</em>
+          </div>
+        </a>
+        <div className="tasteHeroReceipt" aria-hidden="true"><span>One Bion account</span><strong>Pay, borrow and repay</strong></div>
       </div>
     </section>
 
